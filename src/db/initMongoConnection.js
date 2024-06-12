@@ -6,10 +6,11 @@ export const initMongoConnection = async () => {
   const user = env(MONGODB_CONSTANTS.MONGODB_USER);
   const password = env(MONGODB_CONSTANTS.MONGODB_PASSWORD);
   const url = env(MONGODB_CONSTANTS.MONGODB_URL);
+  const db = env(MONGODB_CONSTANTS.MONGODB_DB);
 
   try {
-    mongoose.connect(
-      `mongodb+srv://${user}:${password}@${url}/?retryWrites=true&w=majority`,
+    await mongoose.connect(
+      `mongodb+srv://${user}:${password}@${url}/${db}?retryWrites=true&w=majority`,
     );
     console.log('Mongo connection successfully established!');
   } catch (error) {
