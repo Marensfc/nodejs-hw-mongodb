@@ -6,7 +6,7 @@ export const errorHandler = async (err, req, res, next) => {
       status: err.status,
       message: err.message,
       data: {
-        message: err.message,
+        message: err,
       },
     });
     return;
