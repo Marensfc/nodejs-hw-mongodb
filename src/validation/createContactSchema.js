@@ -11,8 +11,10 @@ export const createContactSchema = Joi.object({
     .positive()
     .greater(+379999999999)
     .less(+381000000000)
+    .required()
     .messages({
       'number.positive': 'Number must be a positive',
+      'number.required': 'Number is required',
     }),
   email: Joi.string().email().messages({
     'string.base': 'Email should be a string',
@@ -21,10 +23,7 @@ export const createContactSchema = Joi.object({
   isFavourite: Joi.boolean().messages({
     'isFavourite.base': 'isFavourite must be a boolean',
   }),
-  contactType: Joi.string()
-    .valid('work', 'home', 'personal')
-    .required()
-    .messages({
-      'string.base': 'contactType should be a string',
-    }),
+  contactType: Joi.string().valid('work', 'home', 'personal').messages({
+    'string.base': 'contactType should be a string',
+  }),
 });
