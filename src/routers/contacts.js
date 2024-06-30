@@ -11,9 +11,11 @@ import { validateBody } from '../middlewares/validateBody.js';
 import { validateMongoId } from '../middlewares/validateMongoId.js';
 import { createContactSchema } from '../validation/createContactSchema.js';
 import { patchContactSchema } from '../validation/patchContactSchema.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
 const router = Router();
 
+router.use(authenticate);
 router.use('/:contactId', validateMongoId());
 
 router.get('/', ctrlWrapper(getAllContactsController));
