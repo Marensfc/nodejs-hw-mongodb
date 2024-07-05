@@ -1,4 +1,4 @@
-import { TIME } from '../constants/time.js';
+import { TIME } from '../constants/index.js';
 import {
   registerUser,
   loginUser,

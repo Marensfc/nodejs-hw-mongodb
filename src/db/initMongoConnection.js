@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { env } from '../utils/env.js';
-import { MONGODB_CONSTANTS } from '../constants/mongoDB-constants.js';
+import { MONGODB_CONSTANTS } from '../constants/index.js';
 
 export const initMongoConnection = async () => {
   const user = env(MONGODB_CONSTANTS.MONGODB_USER);

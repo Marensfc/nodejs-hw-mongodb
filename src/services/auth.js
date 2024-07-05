@@ -3,11 +3,11 @@ import bcrypt from 'bcrypt';
 import { randomBytes } from 'crypto';
 import { SessionsCollection } from '../db/models/sessions.js';
 import { UsersCollection } from '../db/models/users.js';
-import { TIME } from '../constants/time.js';
+import { TIME } from '../constants/index.js';
 import jwt from 'jsonwebtoken';
 import { env } from '../utils/env.js';
 import { sendEmail } from '../utils/sendEmail.js';
-import { SMTP } from '../constants/smtp.js';
+import { SMTP } from '../constants/index.js';
 
 const createSession = () => {
   const accessToken = randomBytes(30).toString('base64');

@@ -23,4 +23,5 @@ export const patchContactSchema = Joi.object({
   contactType: Joi.string().valid('work', 'home', 'personal').messages({
     'string.base': 'contactType should be a string',
   }),
+  photo: Joi.string(),
 });
