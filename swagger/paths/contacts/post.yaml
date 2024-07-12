@@ -41,7 +41,7 @@ requestBody:
           userId:
             description: 'User id of the contact'
             type: string
-            example: 6690e9a667f1ba48cff3b053
+            example: 669130a2f6ba0986e04ac9fa
           photo:
             description: "Contact's photo"
             type: string

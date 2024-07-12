@@ -1,0 +1,94 @@
+tags:
+  - Contacts
+summary: Get list of contacts
+operationId: getContacts
+description: 'Get list of contacts'
+security:
+  - bearerAuth: []
+parameters:
+  - name: page
+    in: query
+    schema:
+      type: integer
+      example: 1
+  - name: perPage
+    in: query
+    schema:
+      type: integer
+      example: 10
+  - name: sortBy
+    in: query
+    schema:
+      type: string
+      example: 'name'
+      description: "All student's fields can be mentioned. Default value - _id"
+  - name: sortOrder
+    in: query
+    schema:
+      type: string
+      enum: ['asc', 'desc']
+      example: 'asc'
+  - name: contactType
+    in: query
+    schema:
+      type: string
+      enum: ['work', 'home', 'personal']
+      example: 'pesonal'
+  - name: isFavourite
+    in: query
+    schema:
+      type: boolean
+      example: false
+responses:
+  '200':
+    description: 'Get list of contacts'
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully get contacts
+            data:
+              type: object
+              required:
+                - data
+                - page
+                - perPage
+                - totalItems
+                - totalPages
+                - hasPreviousPage
+                - hasNextPage
+              properties:
+                data:
+                  type: array
+                  items:
+                    $ref: ../../components/schemes/contact.yaml
+                page:
+                  type: integer
+                  example: 3
+                perPage:
+                  type: integer
+                  example: 5
+                totalItems:
+                  type: integer
+                  example: 20
+                totalPages:
+                  type: integer
+                  example: 4
+                hasPreviousPage:
+                  type: boolean
+                  example: true
+                hasNextPage:
+                  type: boolean
+                  example: true
+  '401':
+    $ref: '../../components/responses/401.yaml'
