@@ -15,6 +15,9 @@ tags:
 servers:
   - url: <http://localhost:3000>
 paths:
+  /contacts:
+    post:
+      $ref: ../swagger/paths/contacts/post.yaml
   /contacts/{contactId}:
     get:
       $ref: ../swagger/paths/contacts/{contactId}/get.yaml
