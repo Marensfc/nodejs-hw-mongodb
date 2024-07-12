@@ -1,0 +1,23 @@
+type: object
+required:
+  - _id
+  - name
+  - email
+  - password
+properties:
+  _id:
+    description: "User's id"
+    type: string
+    example: 6690e9a667f1ba48cff3b053
+  name:
+    description: "User's name"
+    type: string
+    example: Tom Miller
+  email:
+    description: "Contact's email"
+    type: string
+    example: tom.miller@example.com
+  password:
+    description: "User's password"
+    type: string
+    example: Y7GhhsOs787hsyqmghjsIgRhL87nYgt6nHF1roN
