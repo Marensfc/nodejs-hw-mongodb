@@ -1,0 +1,94 @@
+tags:
+  - Auth
+summary: Change user's password
+operationId: changeUserPwd
+description: "Change user's password"
+security: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - token
+          - password
+        properties:
+          token:
+            description: "User's token"
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlbWFpbDVAZXhhbXBsZS5jb20iLCJpYXQiOjE3MjAxNjI0NjksImV4cCI6MTcyMDE2Mjc2OX0.hSmcujoZR4P3NJyxPkGHOryJeIIma5v-1lz_cN7C35
+          password:
+            description: "User's password"
+            type: string
+            example: NStsSjuUG695HNstxnqyHtI
+responses:
+  '200':
+    description: "Changes user's password"
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Password has been successfully reset.
+            data:
+              type: string
+              example: '5qvJxgBzuBcROklzwrpn2yynQrGXtDFF0q/76zCY'
+  '401':
+    description: Bad request error
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 401
+            message:
+              type: string
+              example: invalid signature
+            data:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  example: 'invalid signature'
+  '404':
+    description: Not found error
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 404
+            message:
+              type: string
+              example: Not Found
+            data:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  example: 'User not found'

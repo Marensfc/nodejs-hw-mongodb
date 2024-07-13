@@ -1,0 +1,63 @@
+tags:
+  - Auth
+summary: Refresh user
+operationId: refreshUser
+description: 'Login user by refresh token'
+security: []
+parameters:
+  - name: sessionId
+    in: cookie
+    required: true
+    schema:
+      type: string
+  - name: refreshToken
+    in: cookie
+    required: true
+    schema:
+      type: string
+responses:
+  '200':
+    description: 'Refreshes a user'
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully refreshed a session!
+            data:
+              type: string
+              example: '5qvJxgBzuBcROklzwrpn2yynQrGXtDFF0q/76zCY'
+  '404':
+    description: Not found error
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 404
+            message:
+              type: string
+              example: Not Found
+            data:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  example: 'Session not found'
