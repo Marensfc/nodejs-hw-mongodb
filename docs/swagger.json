@@ -5,13 +5,13 @@
     "title": "Contacts app",
     "license": {
       "name": "Apache 2.0",
-      "url": "<http://www.apache.org/licenses/LICENSE-2.0.html>"
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
     "description": "This is a documentation of contacts app\n"
   },
   "servers": [
     {
-      "url": "<http://localhost:3000>"
+      "url": "http://localhost:3000"
     }
   ],
   "tags": [
@@ -58,10 +58,10 @@
           {
             "name": "sortBy",
             "in": "query",
+            "description": "All student's fields can be mentioned. Default value - _id",
             "schema": {
               "type": "string",
-              "example": "name",
-              "description": "All student's fields can be mentioned. Default value - _id"
+              "example": "name"
             }
           },
           {
@@ -195,8 +195,7 @@
                   "phoneNumber",
                   "email",
                   "isFavourite",
-                  "contactType",
-                  "userId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -227,11 +226,6 @@
                       "home",
                       "work"
                     ]
-                  },
-                  "userId": {
-                    "description": "User id of the contact",
-                    "type": "string",
-                    "example": "669130a2f6ba0986e04ac9fa"
                   },
                   "photo": {
                     "description": "Contact's photo",
@@ -297,6 +291,7 @@
             "name": "contactId",
             "in": "path",
             "required": true,
+            "description": "Contact's id",
             "schema": {
               "type": "string",
               "example": "6690e9a667f1ba48cff3b053"
@@ -395,11 +390,6 @@
                       "home",
                       "work"
                     ]
-                  },
-                  "userId": {
-                    "description": "User id of the contact",
-                    "type": "string",
-                    "example": "669130a2f6ba0986e04ac9fa"
                   },
                   "photo": {
                     "description": "Contact's photo",
@@ -1111,7 +1101,7 @@
           "photo": {
             "description": "Contact's photo",
             "type": "string",
-            "example": "<https://res.cloudinary.com/dkoredxww/image/upload/v1720774401/a0qv3z9rww9vhmhlrawo.jpg>"
+            "example": "<https://res.cloudinary.com/dkoredxww/image/upload/v1720865052/ckcifc4m9irylkdrxufs.jpg>"
           }
         }
       },

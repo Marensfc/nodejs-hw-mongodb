@@ -25,7 +25,7 @@ requestBody:
           password:
             description: "User's password"
             type: string
-            example: XsiqxmS1264017Ghfjchsu
+            example: XsiqxmS4017Ghfj
 responses:
   '201':
     description: 'Registers a user'

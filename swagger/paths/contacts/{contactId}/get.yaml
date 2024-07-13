@@ -9,6 +9,7 @@ parameters:
   - name: contactId
     in: path
     required: true
+    description: "Contact's id"
     schema:
       type: string
       example: '6690e9a667f1ba48cff3b053'

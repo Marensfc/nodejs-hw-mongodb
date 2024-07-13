@@ -18,10 +18,10 @@ parameters:
       example: 10
   - name: sortBy
     in: query
+    description: "All student's fields can be mentioned. Default value - _id"
     schema:
       type: string
       example: 'name'
-      description: "All student's fields can be mentioned. Default value - _id"
   - name: sortOrder
     in: query
     schema:
@@ -30,12 +30,14 @@ parameters:
       example: 'asc'
   - name: contactType
     in: query
+    description: "Contact's type"
     schema:
       type: string
       enum: ['work', 'home', 'personal']
       example: 'pesonal'
   - name: isFavourite
     in: query
+    description: 'It shows whether the contact is in favorites or not'
     schema:
       type: boolean
       example: false
