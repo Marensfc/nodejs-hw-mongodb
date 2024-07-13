@@ -79,6 +79,7 @@
           {
             "name": "contactType",
             "in": "query",
+            "description": "Contact's type",
             "schema": {
               "type": "string",
               "enum": [
@@ -92,6 +93,7 @@
           {
             "name": "isFavourite",
             "in": "query",
+            "description": "It shows whether the contact is in favorites or not",
             "schema": {
               "type": "boolean",
               "example": false
@@ -502,7 +504,7 @@
                   "password": {
                     "description": "User's password",
                     "type": "string",
-                    "example": "XsiqxmS1264017Ghfjchsu"
+                    "example": "XsiqxmS4017Ghfj"
                   }
                 }
               }
