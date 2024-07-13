@@ -6,6 +6,7 @@ import router from './routers/index.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import cookieParser from 'cookie-parser';
+import { swaggerDocs } from './middlewares/swaggerDocs.js';
 
 const PORT = env('PORT');
 
@@ -29,6 +30,7 @@ export const setupServer = () => {
     }),
   );
 
+  app.use('/api-docs', swaggerDocs());
   app.use(router);
 
   app.use(errorHandler);

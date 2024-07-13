@@ -6,12 +6,12 @@ info:
     name: Apache 2.0
     url: <http://www.apache.org/licenses/LICENSE-2.0.html>
   description: >
-    Application for operations with contacts
+    This is a documentation of contacts app
 tags:
   - name: Contacts
     description: Operations with contacts
   - name: Auth
-    description: Operations with auth
+    description: Auth operations
 servers:
   - url: <http://localhost:3000>
 paths:
@@ -36,6 +36,15 @@ paths:
   /auth/refresh:
     post:
       $ref: ../swagger/paths/auth/refresh/post.yaml
+  /auth/logout:
+    post:
+      $ref: ../swagger/paths/auth/logout/post.yaml
+  /auth/send-reset-email:
+    post:
+      $ref: ../swagger/paths/auth/send-reset-email/post.yaml
+  /auth/reset-pwd:
+    post:
+      $ref: ../swagger/paths/auth/reset-pwd/post.yaml
 components:
   securitySchemes:
     bearerAuth:
